@@ -17,4 +17,4 @@ sudo -u postgres psql -c "SELECT version();"
 sudo -u postgres psql -c "SHOW data_directory;"
 psql --version
 psql -h localhost -U postgres
-rm install-DB.sh
+#rm install-DB.sh
