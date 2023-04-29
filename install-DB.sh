@@ -10,8 +10,8 @@ sudo apt -y install gnupg2 wget vim bat nano
  #2) Install PostgreSQL 15 Database Server and Client
  
 sudo apt install postgresql postgresql-client -y
-#sudo -u postgres psql --command '\password'sudo systemctl enable postgresql
-sudo systemctl status postgresql
+#sudo -u postgres psql --command '\password'
+sudo systemctl enable postgresql
 sudo systemctl status postgresql
 sudo -u postgres psql -c "SELECT version();"
 sudo -u postgres psql -c "SHOW data_directory;"
