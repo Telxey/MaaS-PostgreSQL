@@ -25,7 +25,7 @@ rm install-DB.sh
 # $MAAS_DBNAME = Payback6699
 # $HOSTNAME = pg.f4c1l.com
 
-export MAASDB=maasdb
+export MAASDB=Payback6699
 export MAASDBUSER=Tabasco4313
 # WARNING you have to escape special characters for the password
 export MAASDBUSERPASSWORD=4vhjvadnhifchy9p
@@ -41,5 +41,5 @@ sudo vi /etc/postgresql/15/main/pg_hba.conf
 #add lines 
 # host    maasdb          maasdbuser      172.30.0.0/16           md5
 # host    replication     maasdbrep       172.30.0.0/16           md5
-# host    $MAAS_DBNAME    $MAAS_DBUSER    0/0     md5
+# host    $MAASDB    $MAASDBUSER    0/0     md5
 # 
