@@ -19,11 +19,12 @@ sudo -u postgres psql -c "SHOW data_directory;"
 psql --version
 #psql -h localhost -U postgres
 cd MaaS-PostgreSQL
-sudo nano export.sh
-bash export.sh
-cd ..
+cat db-info.md
+sudo nano sample-export.md
+cat sample-export.md
+mv sample-export.md db.sh
+bash db.sh
 
-rm -r MaaS-PostgreSQL && rm install-DB.sh
 
 # Create DB
 # $MAAS_DBUSER = <db-usr>
@@ -40,4 +41,8 @@ sudo -u postgres psql --command '\du'
 sudo -u postgres psql --command '\q'
 sudo nano /etc/postgresql/15/main/postgresql.conf
 sudo nano /etc/postgresql/15/main/pg_hba.conf
+
+
+rm -r MaaS-PostgreSQL 
+rm install-DB.sh
 
