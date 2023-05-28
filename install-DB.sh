@@ -43,6 +43,6 @@ sudo nano /etc/postgresql/15/main/postgresql.conf
 sudo nano /etc/postgresql/15/main/pg_hba.conf
 
 
-rm -r MaaS-PostgreSQL 
-rm install-DB.sh
+sudo rm -rf MaaS-PostgreSQL 
+sudo rm install-DB.sh
 
