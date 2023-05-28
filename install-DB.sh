@@ -5,10 +5,11 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
 
 sudo apt update && sudo apt upgrade -y
-sudo apt -y install gnupg2 wget vim bat nano
+sudo apt -y install gnupg2 wget vim bat nano git
  
  #2) Install PostgreSQL 15 Database Server and Client
  
+git clonehttps://github.com/Telxey/MaaS-PostgreSQL.git 
 sudo apt install postgresql postgresql-client -y
 #sudo -u postgres psql --command '\password'
 sudo systemctl enable postgresql
@@ -17,20 +18,22 @@ sudo -u postgres psql -c "SELECT version();"
 sudo -u postgres psql -c "SHOW data_directory;"
 psql --version
 #psql -h localhost -U postgres
-rm install-DB.sh
+cd MaaS-PostgreSQL
+sudo nano export.sh
+bash export.sh
+cd ..
+
+rm -r MaaS-PostgreSQL && rm install-DB.sh
 
 # Create DB
-# $MAASDBUSER = <db-usr>
-# $MAASDBUSERPASSWORD = <db-usr-Passwd>
+# $MAAS_DBUSER = <db-usr>
+# $MAAS_DBPASS = <db-usr-Passwd>
 # $MAASDB = <databasename>
 # $HOSTNAME = hostname
 
-export MAASDB=Payback6699
-export MAASDBUSER=Tabasco4313
 # WARNING you have to escape special characters for the password
-export MAASDBUSERPASSWORD=4vhjvadnhifchy9p
-export HOSTNAME=pg.f4c1l.com
-sudo -u postgres psql -c "CREATE USER \"$MAASDBUSER\" WITH ENCRYPTED PASSWORD '$MAASDBUSERPASSWORD'"
+
+sudo -u postgres psql -c "CREATE USER \"$MAAS_DBUSER\" WITH ENCRYPTED PASSWORD '$MAAS_DBPASS'"
 sudo -u postgres createdb -O $MAASDBUSER $MAASDB
 sudo -u postgres psql --command '\l'
 sudo -u postgres psql --command '\du'
