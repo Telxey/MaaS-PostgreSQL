@@ -9,7 +9,7 @@ sudo apt -y install gnupg2 wget vim bat nano git
  
  #2) Install PostgreSQL 15 Database Server and Client
  
-git clonehttps://github.com/Telxey/MaaS-PostgreSQL.git 
+git clone https://github.com/Telxey/MaaS-PostgreSQL.git 
 sudo apt install postgresql postgresql-client -y
 #sudo -u postgres psql --command '\password'
 sudo systemctl enable postgresql
