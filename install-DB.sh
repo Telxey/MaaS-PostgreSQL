@@ -20,10 +20,10 @@ psql --version
 rm install-DB.sh
 
 # Create DB
-# $MAASDBUSER = Tabasco4313
-# $MAASDBUSERPASSWORD = 4vhjvadnhifchy9p
-# $MAASDB = Payback6699
-# $HOSTNAME = pg.f4c1l.com
+# $MAASDBUSER = <db-usr>
+# $MAASDBUSERPASSWORD = <db-usr-Passwd>
+# $MAASDB = <databasename>
+# $HOSTNAME = hostname
 
 export MAASDB=Payback6699
 export MAASDBUSER=Tabasco4313
@@ -38,8 +38,3 @@ sudo -u postgres psql --command '\q'
 sudo nano /etc/postgresql/15/main/postgresql.conf
 sudo nano /etc/postgresql/15/main/pg_hba.conf
 
-#add lines 
-# host    Payback6699          Tabasco4313      0/0           md5
-# host    replication     maasdbrep       172.30.0.0/16           md5
-# host    $MAASDB    $MAASDBUSER    0/0     md5
-# 
