@@ -35,7 +35,7 @@ bash db.sh
 # WARNING you have to escape special characters for the password
 
 sudo -u postgres psql -c "CREATE USER \"$MAAS_DBUSER\" WITH ENCRYPTED PASSWORD '$MAAS_DBPASS'"
-sudo -u postgres createdb -O $MAASDBUSER $MAASDB
+sudo -u postgres createdb -O $MAAS_DBUSER $MAAS_DBNAME
 sudo -u postgres psql --command '\l'
 sudo -u postgres psql --command '\du'
 sudo -u postgres psql --command '\q'
